@@ -1,0 +1,29 @@
+{
+
+	"manifest_version": 2,
+	"name"						: "HSS Recorder",
+	"version"					: "1.0",
+	"description"			: "Tracks clicks and search bar entries for script generation.",
+
+	"browser_action"	: {
+		"default_icon"	: {"16" : "inactive.png"},
+		"default_title" : "HSS Recorder"
+	},
+
+	"author"					: "Vincent",
+	"background"			: {
+		"scripts"				: ["background.js"],
+    "persistent"    : false
+	},
+
+  "content_scripts" : [{
+    "matches"       : ["http://*/*",
+                      "https://*/*"],
+    "js"            : ["content.js"]
+  }],
+
+	"permissions"			: [
+		"activeTab"	
+  ]
+
+}
